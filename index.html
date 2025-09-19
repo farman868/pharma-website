@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YourMedsHub</title>
+
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header Section 1 -->
+  <!-- Netmeds-Style Header -->
+<header class="netmeds-header">
+  <div class="top-header container-fluid d-flex justify-content-between align-items-center py-2 px-3">
+    <!-- Logo -->
+    <div class="logo-section d-flex align-items-center">
+      <img src="./download.png" alt="Logo" width="64" height="54">
+      <span class="brand-name ms-2">YourMedsHub</span>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-section w-50">
+      <input type="text" class="form-control search-input" placeholder="Search for medicines, lab tests, beauty products...">
+    </div>
+
+    <!-- Right Menu -->
+    <div class="menu-icons d-flex align-items-center gap-4">
+      <a href="#" class="text-dark"><i class="fa-solid fa-tag me-1"></i>Offers</a>
+      <a href="#" class="text-dark"><i class="fa-solid fa-user me-1"></i>Login/Signup</a>
+      
+    </div>
+  </div>
+
+  <!-- Navigation Categories -->
+  <nav class="category-nav bg-success py-2">
+    <div class="container-fluid d-flex justify-content-center gap-5">
+      <a href="#" class="nav-link text-white"><i class="fa-solid fa-prescription-bottle-medical"></i> Medicines</a>
+      <a href="#" class="nav-link text-white"><i class="fa-solid fa-prescription-bottle-medical"></i> Wellness</a>
+      <a href="#" class="nav-link text-white"><i class="fa-solid fa-flask-vial"></i> Lab Tests</a>
+      <a href="#" class="nav-link text-white"><i class="fa-solid fa-cubes-stacked"> </i> Beauty</a>
+      <a href="#" class="nav-link text-white"><i class="fa-solid fa-user-nurse"></i> Health Corner</a>
+    </div>
+  </nav>
+</header>
+<!-- Cart Modal -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-header">
+    <h5>Your Cart</h5>
+    <button onclick="closeCart()" class="close-btn">&times;</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <p>Total: ₹<span id="cartTotal">0</span></p>
+    <button class="btn btn-success w-100">Checkout</button>
+  </div>
+</div>
+
+<!-- Cart Toggle Button -->
+<button class="open-cart-btn" onclick="openCart()">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <span id="cart-count">0</span>
+</button>
+<!-- Cart Toggle Button -->
+<button class="open-cart-btn" onclick="toggleCart()">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <span id="cart-count">0</span>
+</button>
+
+
+
+
+  <!-- Carousel Section -->
+  <div class="banner-carousel-container">
+    <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="4"></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./theme-image-1750851318549.avif" alt="Promo 1">
+        </div>
+        <div class="carousel-item">
+          <img src="./theme-image-1755169269286.avif" alt="Promo 2">
+        </div>
+        <div class="carousel-item">
+          <img src="./theme-image-1755307965870.avif" alt="Promo 3">
+        </div>
+        <div class="carousel-item">
+          <img src="./theme-image-1755307928695.avif" alt="Promo 4">
+        </div>
+        <div class="carousel-item">
+          <img src="./theme-image-1755307965870.avif" alt="Promo 5">
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
+  </div>
+  <div class="categories">
+           <!-- Specialized Stores Section (Product Cards) -->
+<section class="specialized-stores">
+  <h3>Specialized Stores</h3>
+  <div class="scrolling-container">
+    <div class="store-card">
+      <img src="./1.webp" alt="Diabetes Care">
+      <p>Protien Power house</p>
+      <p><strong>₹299</strong></p>
+      <button class="btn btn-success btn-sm" onclick="addToCart('GlucoCare Strip', 299)">Add to Cart</button>
+    </div>
+    <div class="store-card">
+      <img src="./2.avif" alt="Mom & Baby Care">
+      <p>Derma Cosmatics</p>
+      <p><strong>₹199</strong></p>
+      <button class="btn btn-success btn-sm" onclick="addToCart('Baby Lotion', 199)">Add to Cart</button>
+    </div>
+    <div class="store-card">
+      <img src="./3.jpg" alt="Personal Care">
+      <p>Elderly Care made simple</p>
+      <p><strong>₹149</strong></p>
+      <button class="btn btn-success btn-sm" onclick="addToCart('Hair Oil', 149)">Add to Cart</button>
+    </div>
+    <div class="store-card">
+      <img src="./4.webp" alt="Beauty">
+      <p>The vitamin store</p>
+      <p><strong>₹249</strong></p>
+      <button class="btn btn-success btn-sm" onclick="addToCart('Face Cream', 249)">Add to Cart</button>
+    </div>
+    <div class="store-card">
+      <img src="./5.avif" alt="Wellness">
+      <p>beat The Diabetes</p>
+      <p><strong>₹349</strong></p>
+      <button class="btn btn-success btn-sm" onclick="addToCart('Omega Capsules', 349)">Add to Cart</button>
+    </div>
+    <div class="store-card">
+      <img src="./6.jpg" alt="Healthcare Devices">
+      <p>Special Picks for you, ladies</p>
+      <p><strong>₹179</strong></p>
+      <button class="btn btn-success btn-sm" onclick="addToCart('Digital Thermometer', 179)">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<!-- All Categories Section (Product Cards) -->
+<section class="all-categories">
+  <h3>All Categories</h3>
+  <div class="scrolling-container">
+    <div class="category-card">
+      <img src="./theme-image-1710932521007.avif" alt="Medicines">
+      <p>Ayush</p>
+      <p><strong>₹59</strong></p>
+      <button class="btn btn-success btn-sm" onclick="addToCart('Paracetamol 500mg', 59)">Add to Cart</button>
+    </div>
+    <div class="category-card">
+      <img src="./theme-image-1710932662164.avif" alt="Lab Tests">
+      <p>Baby care</p>
+      <p><strong>₹499</strong></p>
+      <button class="btn btn-success btn-sm" onclick="addToCart('Blood Test Kit', 499)">Add to Cart</button>
+    </div>
+    <div class="category-card">
+      <img src="./theme-image-1710932793372.avif" alt="Beauty">
+      <p>Face Care</p>
+      <p><strong>₹139</strong></p>
+      <button class="btn btn-success btn-sm" onclick="addToCart('Face Wash', 139)">Add to Cart</button>
+    </div>
+    <div class="category-card">
+      <img src="./theme-image-1710932864046.avif" alt="Wellness">
+      <p>Fragrances</p>
+      <p><strong>₹799</strong></p>
+      <button class="btn btn-success btn-sm" onclick="addToCart('Protein Powder', 799)">Add to Cart</button>
+    </div>
+    <div class="category-card">
+      <img src="./theme-image-1711690762727.avif" alt="Health Corner">
+      <p>Fitness</p>
+      <p><strong>₹199</strong></p>
+      <button class="btn btn-success btn-sm" onclick="addToCart('Vitamin C Tablets', 199)">Add to Cart</button>
+    </div>
+    <div class="category-card">
+      <img src="./theme-image-1716808878221.avif" alt="All Medicines">
+      <p>multivitamins</p>
+      <p><strong>₹349</strong></p>
+      <button class="btn btn-success btn-sm" onclick="addToCart('Inhaler Device', 349)">Add to Cart</button>
+    </div>
+    <div class="category-card">
+      <img src="../monster.webp" alt="Health Food & Drinks">
+      <p>Energy Drink</p>
+      <p><strong>₹89</strong></p>
+      <button class="btn btn-success btn-sm" onclick="addToCart('Energy Drink', 89)">Add to Cart</button>
+    </div>
+  </div>
+  <section class="best-seller-section">
+  <div class="best-seller-container">
+    <h2>Best Sellers</h2>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="./h1.png" alt="Product 1" />
+        </div>
+        <h3 class="product-name">Herbal Shampoo</h3>
+        <p class="product-desc">Gently cleanses and nourishes your hair, leaving it soft, shiny, and full of life.</p>
+        <div class="product-price">₹299</div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="./h3.webp" alt="Product 2" />
+        </div>
+        <h3 class="product-name">Protien supplements</h3>
+        <p class="product-desc">Fuel your body with clean, high-quality protein for muscle growth, recovery, and everyday strength.</p>
+        <div class="product-price">₹199</div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="./h5.png" alt="Product 3" />
+        </div>
+        <h3 class="product-name">UV Rays blockers</h3>
+        <p class="product-desc">High SPF 55 protection for powerful defense against sunburn and UV damage.</p>
+        <div class="product-price">₹149</div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="./h6.png" alt="Product 4" />
+        </div>
+        <h3 class="product-name">Perfumes</h3>
+        <p class="product-desc">Turn heads and leave a trail of mystery with a scent that lingers long after you’ve gone</p>
+        <div class="product-price">₹349</div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- membership-section -->
+  <section class="membership-section">
+  <div class="membership-container">
+    <div class="membership-header">
+      <h2>YourMedsHub First Membership</h2>
+      <p>Enhance your healthcare experience with exclusive benefits</p>
+    </div>
+    <div class="membership-details">
+      <div class="membership-image">
+        <img src="./download.png" alt="YourMedsHub First Membership">
+      </div>
+      <div class="membership-info">
+        <div class="membership-price">
+          <span class="original-price">₹999</span>
+          <span class="discounted-price">₹49</span>
+        </div>
+        <div class="membership-benefits">
+          <ul>
+            <li>2% extra cashback on prepaid medicine orders</li>
+            <li>10% off on lab tests</li>
+            <li>Unlimited free delivery on orders above ₹99</li>
+            <li>3 free doctor consultations</li>
+            <li>Priority processing of orders</li>
+          </ul>
+        </div>
+        <div class="membership-actions">
+          <button class="buy-now">Buy Now</button>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</section>
+<section class="achievements-section">
+  <div class="container">
+    <div class="achievement-card">
+      <i class="fa-solid fa-shop"></i>
+      <h2>1000+</h2>
+      <p>Offline Stores</p>
+    </div>
+    <div class="achievement-card">
+      <i class="fa-solid fa-map-location-dot"></i>
+      <h2>200,000+</h2>
+      <p>Pincodes Covered</p>
+    </div>
+    <div class="achievement-card">
+      <i class="fa-solid fa-heart"></i>
+      <h2>7M+</h2>
+      <p>Happy Customers</p>
+    </div>
+  </div>
+</section>
+
+
+
+    </div>
+    <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h5>COMPANY</h5>
+      <ul>
+        <li><a href="#">About YourMedsHub</a></li>
+        <li><a href="#">Career</a></li>
+        <li><a href="#">Terms and Conditions</a></li>
+        <li><a href="#">Shipping and Delivery Policy</a></li>
+        <li><a href="#">Return, Refund and Cancellation Policy</a></li>
+        <li><a href="#">Sitemap</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-column">
+      <h5>SHOPPING</h5>
+      <ul>
+        <li><a href="#">Shop by Categories</a></li>
+        <li><a href="#">Offers / Coupons</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Need Help?</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h5>POPULAR CATEGORIES</h5>
+      <ul>
+        <li><a href="#">Fitness</a></li>
+        <li><a href="#">Personal Care</a></li>
+        <li><a href="#">Ayush</a></li>
+        <li><a href="#">Skin Care</a></li>
+        <li><a href="#">Men's Grooming</a></li>
+        <li><a href="#">Make-up</a></li>
+        <li><a href="#">Devices</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column newsletter">
+      <h5>SUBSCRIBE TO OUR NEWSLETTER</h5>
+      <p>Get a free subscription to our health and fitness tips and stay tuned to our latest offers</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

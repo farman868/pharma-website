@@ -1,0 +1,799 @@
+/* Netmeds-Style Header Colors */
+.netmeds-header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Top Header */
+.top-header {
+  background-color: #ffffff;
+}
+
+.top-header .brand-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #32a83e;
+}
+
+.search-section .search-input {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 8px 20px;
+}
+
+/* Menu Links (Login, Cart, etc.) */
+.menu-icons a {
+  color: #222;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.menu-icons a:hover {
+  color: #32a83e;
+}
+
+/* Category Navigation */
+.category-nav {
+  background-color: #32a83e;
+}
+
+.category-nav a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.category-nav a:hover {
+  opacity: 0.85;
+}
+/* 🛒 Cart Styles */
+.cart-modal {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 300px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  padding: 15px;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-header h5 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.cart-items {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+.cart-item p {
+  margin: 0;
+  font-size: 14px;
+  width: 120px;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cart-item-controls button {
+  padding: 2px 6px;
+  border: 1px solid #ccc;
+  background: #eee;
+  cursor: pointer;
+}
+
+.cart-footer {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.open-cart-btn {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background: #32a83e;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#cart-count {
+  position: absolute;
+  top: 0;
+  right: -5px;
+  background: red;
+  border-radius: 50%;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Carousel Container */
+.banner-carousel-container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 20px auto;
+  padding: 0 12px;
+}
+
+.banner-carousel-container .carousel-item img {
+  width: 100%;
+  height: 256px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-indicators .active {
+  background-color: #ffffff;
+}
+
+/* Responsive Carousel Image Height */
+@media (max-width: 768px) {
+  .banner-carousel-container .carousel-item img {
+    height: 180px;
+  }
+}
+/* Carousel navigation buttons background */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1; /* Make sure buttons are fully visible */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+/* Darker arrow icon for better visibility on white background */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(0);
+}
+
+/* Add a subtle hover effect */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: #ddd;
+}
+/* Section Titles */
+.specialized-stores h3,
+.all-categories h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 20px 0 12px 15px;
+  color: #222;
+}
+
+/* Horizontal scrolling container */
+.scrolling-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 0 15px 15px 15px;
+  scrollbar-width: thin;
+  scrollbar-color: #32a83e #e0e0e0;
+}
+
+/* Scrollbar for WebKit */
+.scrolling-container::-webkit-scrollbar {
+  height: 6px;
+}
+.scrolling-container::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 3px;
+}
+.scrolling-container::-webkit-scrollbar-thumb {
+  background-color: #32a83e;
+  border-radius: 3px;
+}
+
+/* Section Titles */
+.specialized-stores h3,
+.all-categories h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 20px 0 12px 15px;
+  color: #222;
+}
+
+/* Scrolling containers */
+.scrolling-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 0 15px 15px 15px;
+  scrollbar-width: thin;
+  scrollbar-color: #32a83e #e0e0e0;
+}
+
+/* WebKit Scrollbar */
+.scrolling-container::-webkit-scrollbar {
+  height: 6px;
+}
+.scrolling-container::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 3px;
+}
+.scrolling-container::-webkit-scrollbar-thumb {
+  background-color: #32a83e;
+  border-radius: 3px;
+}
+
+/* Card Base Styling (common to both sections) */
+.store-card, .category-card {
+  flex: 0 0 auto;
+  width: 160px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: default;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.store-card:hover, .category-card:hover {
+  box-shadow: 0 6px 18px rgba(50, 168, 62, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Product Image */
+.store-card img,
+.category-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+/* Product Title */
+.store-card p,
+.category-card p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin: 6px 0;
+}
+
+/* Price Styling */
+.store-card p strong,
+.category-card p strong {
+  font-size: 15px;
+  color: #32a83e;
+}
+
+/* Button Styling */
+.store-card .btn,
+.category-card .btn {
+  background-color: #32a83e;
+  color: white;
+  border: none;
+  font-size: 13px;
+  margin-top: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.store-card .btn:hover,
+.category-card .btn:hover {
+  background-color: #279933;
+}
+.categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  gap: 2rem; /* Add some spacing between sections */
+  padding: 2rem 0;
+}
+
+.specialized-stores, .all-categories {
+  width: 80%; /* Adjust width as needed */
+  max-width: 1200px; /* Optional max width */
+  text-align: center; /* Center section headings */
+}
+
+.scrolling-container {
+  display: flex;
+  justify-content: center; /* Center product cards horizontally */
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.store-card, .category-card {
+  min-width: 150px;
+  text-align: center;
+}
+.best-seller-section {
+  background-color: #fff;
+  padding: 60px 20px;
+}
+
+.best-seller-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.best-seller-container h2 {
+  font-size: 32px;
+  color: #32AEB1; /* Netmeds signature teal */
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-image img {
+  max-width: 120px;
+  margin-bottom: 15px;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.product-desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.product-price {
+  font-size: 20px;
+  color: #d32f2f;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+  background-color: #32AEB1;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #289a9f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .best-seller-container h2 {
+    font-size: 28px;
+  }
+}
+
+/* Membership Section */
+.membership-section {
+  background-color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.membership-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.membership-header h2 {
+  font-size: 32px;
+  color: #00796b;
+  margin-bottom: 10px;
+}
+
+.membership-header p {
+  font-size: 16px;
+  color: #555;
+}
+
+
+/* Membership Details */
+.membership-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.membership-image img {
+  width: 300px;
+  border-radius: 8px;
+}
+
+.membership-info {
+  max-width: 500px;
+  text-align: left;
+}
+
+.membership-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.discounted-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.membership-benefits ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.membership-benefits li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.membership-actions button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #00796b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.membership-actions button:hover {
+  background-color: #004d40;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .membership-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .membership-image img {
+    width: 80%;
+  }
+
+  .membership-info {
+    text-align: center;
+  }
+}
+/* achievements-section */
+.achievements-section {
+  background-color: #f5f5f5;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.achievements-container {
+  text-align: center;
+}
+
+.achievement-card {
+  display: inline-block;
+  vertical-align: top;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 20px 30px; /* horizontal + vertical gap */
+  width: 240px;
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+}
+
+.achievement-card i {
+  font-size: 40px;
+  color: #2fa84f;
+  margin-bottom: 15px;
+}
+
+.achievement-card h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+  margin: 0;
+}
+
+.achievement-card p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 8px;
+}
+/* cards to stack on smaller screens */
+@media (max-width: 768px) {
+  .achievement-card {
+    display: block;
+    margin: 20px auto;
+  }
+}
+/* footer class */
+/* Import font that resembles Netmeds (Roboto or similar) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  color: #222222;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Achievements Section */
+.achievements-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+}
+
+.achievements-section .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.achievement-card {
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  flex: 1 1 240px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.achievement-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.achievement-card i {
+  font-size: 36px;
+  color: #32AEB1; /* Netmeds accent */
+  margin-bottom: 16px;
+}
+
+.achievement-card h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222222;
+  margin-bottom: 8px;
+}
+
+.achievement-card p {
+  font-size: 15px;
+  font-weight: 400;
+  color: #555555;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #1f1f1f;
+  color: #cccccc;
+  padding: 60px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h5 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  font-size: 14px;
+  color: #bbbbbb;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #ffffff;
+}
+
+/* Newsletter Column */
+.footer-column.newsletter p {
+  font-size: 14px;
+  color: #dddddd;
+  margin-bottom: 15px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1 1 250px;
+  padding: 10px;
+  border: 1px solid #555555;
+  border-radius: 4px;
+  background-color: #2b2b2b;
+  color: #ffffff;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+  color: #999999;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  background-color: #32AEB1;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #28a09b; /* slightly darker shade of the accent */
+}
+
+/* Copyright / Bottom Footer (if needed) */
+.site-footer .footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #333333;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #777777;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .achievements-section .container,
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .achievement-card,
+  .footer-column {
+    max-width: 100%;
+  }
+
+  .newsletter-form input[type="email"],
+  .newsletter-form button {
+    width: 100%;
+  }
+}
+
+
